@@ -5,7 +5,9 @@ function trimer(form, exception) {
     var keys = Object.keys(form);
     var anyTypedForm = form;
     var result = keys.reduce(function (acc, cur, i) {
-        if (typeof anyTypedForm[cur] === "number" || typeof anyTypedForm[cur] === "undefined" || typeof anyTypedForm[cur] === "object") {
+        if (typeof anyTypedForm[cur] === "number" ||
+            typeof anyTypedForm[cur] === "undefined" ||
+            typeof anyTypedForm[cur] === "object") {
             acc[cur] = anyTypedForm[cur];
             return acc;
         }
@@ -32,7 +34,6 @@ function trimer(form, exception) {
         acc[cur] = anyTypedForm[cur].trim();
         return acc;
     }, {});
-    console.log(result);
     var typedResult = result;
     return typedResult;
 }
